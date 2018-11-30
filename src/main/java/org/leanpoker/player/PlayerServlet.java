@@ -21,7 +21,6 @@ public class PlayerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("action").equals("bet_request")) {
             String gameState = req.getParameter("game_state");
-            System.out.println("GameState: " + gameState);
 
             resp.getWriter().print(Player.betRequest(new JsonParser().parse(gameState)));
         }
